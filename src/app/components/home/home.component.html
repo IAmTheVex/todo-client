@@ -1,0 +1,38 @@
+<div class="to-do">
+  <div class="header">
+    <div class="today">
+      <h4>{{dayOfWeek}} {{today}}</h4>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <p>{{stats.total}}</p>
+        <p>Total</p>
+      </div>
+      <div class="stat">
+        <p>{{stats.remaining}}</p>
+        <p>Remaining</p>
+      </div>
+      <div class="stat">
+        <p>{{stats.done}}</p>
+        <p>Done</p>
+      </div>
+    </div>
+  </div>
+  <div class="body">
+    <h6><b>Tasks</b> for today</h6>
+    <div class="tasks">
+      <div class="task" *ngFor="let task of tasks; index as i;">
+        <input type="checkbox" (click)="taskUpdate(i)" name="task_checkbox" id={{task.id}} [(ngModel)] = "task.state"/>
+        <label for={{task.id}}>
+          <i class="far fa-circle"></i>
+          <i class="fas fa-check-circle"></i>
+        </label>
+        <p class="task-text" contenteditable="true" (blur)="taskOnBlur(task.id, $event.target.textContent)">{{task.text}}</p>
+        <button class="delete" (click)="deleteTask(i)"><i class="fas fa-times-circle"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="add" (click)="addNewTask()"><i class="fas fa-plus"></i> Add new task!</button>
+  </div>
+</div>

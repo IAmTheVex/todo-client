@@ -1,0 +1,37 @@
+<div class="log-in">
+  <div class="header">
+    <div class="logo">
+      <i class="far fa-user-circle"></i>
+      <h4>Log In</h4>
+    </div>
+  </div>
+  <div class="body">
+    <form  #loginForm=ngForm>
+      <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" #email="ngModel" email required
+              autocomplete="username">
+          <div [hidden]="email.pristine || user.email" class="error">
+              E-mail is required
+          </div>
+          <div [hidden]="email.pristine || email.valid" class="error">
+              Must enter a valid e-mail
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" #password="ngModel"
+              required autocomplete="current-password">
+          <div [hidden]="password.pristine || user.password" class="error">
+              Password is required
+          </div>
+      </div>
+  </form>
+  </div>
+  <div class="actions">
+    <button class="log-in-btn" (click)="logIn()" [disabled]="!loginForm.form.valid">Log in!</button>
+    <div class="sign-in">
+      <p>Don't have an account? <a routerLink="/sign-up"><b>Sign up!</b></a></p>
+    </div>
+  </div>
+</div>

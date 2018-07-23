@@ -1,0 +1,114 @@
+.log-in {
+  height: 100vh;
+  width: 100vw;
+
+  .header {
+    height: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, rgba(158, 15, 184, 0.9) -20%, rgba(5, 232, 255, 0.9) 165%);
+    -webkit-user-select: none; -webkit-app-region: drag;
+    cursor: pointer;
+
+    .logo {
+      align-items: center;
+      flex: 0 0 100%;
+      color: white;
+      text-align: center;
+    }
+
+    .logo {
+        height: 100%;
+        padding: 2.25rem 0rem;
+        
+        i.fa-user-circle {
+            font-size: 4rem;
+        }
+
+        h4 {
+          margin: 0;
+          font-size: 2rem;
+        }
+    }
+  }
+
+  .body {
+    height: 55%;
+
+    form {
+        padding: 1rem 2rem;
+        
+        .form-group {
+            label {
+                background: linear-gradient(135deg, rgba(158, 15, 184, 0.9) -20%, rgba(5, 232, 255, 0.9) 165%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: bold;
+            }
+
+            .form-control {
+                border-color: #636363;
+
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+
+            .form-control.ng-touched.ng-invalid {
+                border-color: #e74c3c;
+                color: #e74c3c;
+            }
+
+            .error {
+                padding: 0.2rem 0  0.2rem 0.75rem;
+                color: #e74c3c;
+                font-weight: bold;
+                font-size: 0.85rem;
+            }
+        }
+    }
+  }
+
+  .actions {
+    height: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .log-in-btn {
+      border: 0;
+      margin: 0;
+      padding: 0.3rem 2rem;
+      outline: none;
+      background: linear-gradient(135deg, rgba(158, 15, 184, 0.9) -20%, rgba(5, 232, 255, 0.9) 165%);
+      color: white;
+      border-radius: 1rem;
+      transition: all 0.25s;
+      cursor: pointer;
+
+      &[disabled] {
+        background: #636363;
+        pointer-events: none;
+      }
+    }
+
+    .sign-in {
+      align-items: center;
+      flex: 0 0 100%;
+      color: #636363;
+      text-align: center;
+    }
+
+    .sign-in {
+        a {
+            background: linear-gradient(135deg, rgba(158, 15, 184, 0.9) -20%, rgba(5, 232, 255, 0.9) 165%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+            outline: none;
+        }
+    }
+  }
+}

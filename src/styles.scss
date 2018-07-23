@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+
+  .loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 10;
+  }
+
+  .loader {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    background: transparent;
+  }
+  
+  .loader-1 span {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    display: block;
+    top: 50px;
+    background: linear-gradient(135deg, rgba(158, 15, 184, 0.9) -20%, rgba(5, 232, 255, 0.9) 165%);
+    border-radius: 50%;
+  }
+  .loader-1 span:nth-child(1) {
+    -webkit-animation: bounce 0.8s ease-in-out infinite;
+            animation: bounce 0.8s ease-in-out infinite;
+  }
+  .loader-1 span:nth-child(2) {
+    left: 40px;
+    -webkit-animation: bounce 0.8s ease-in-out 0.25s infinite;
+            animation: bounce 0.8s ease-in-out 0.25s infinite;
+  }
+  .loader-1 span:nth-child(3) {
+    left: 80px;
+    -webkit-animation: bounce 0.8s ease-in-out 0.5s infinite;
+            animation: bounce 0.8s ease-in-out 0.5s infinite;
+  }
+
+  @-webkit-keyframes bounce {
+    0%, 100% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+    }
+    50% {
+      -webkit-transform: translateY(-25px);
+              transform: translateY(-25px);
+    }
+  }
+  @keyframes bounce {
+    0%, 100% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+    }
+    50% {
+      -webkit-transform: translateY(-25px);
+              transform: translateY(-25px);
+    }
+  }
+}

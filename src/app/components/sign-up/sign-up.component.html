@@ -1,0 +1,45 @@
+<div class="sign-up">
+  <div class="header">
+    <div class="logo">
+      <i class="far fa-user-circle"></i>
+      <h4>Sign Up</h4>
+    </div>
+  </div>
+  <div class="body">
+    <form #signUpForm=ngForm>
+      <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" #email="ngModel" email required
+              autocomplete="username">
+          <div [hidden]="email.pristine || user.email" class="error">
+              E-mail is required
+          </div>
+          <div [hidden]="email.pristine || email.valid" class="error">
+              Must enter a valid e-mail
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" #password="ngModel"
+              required autocomplete="current-password">
+          <div [hidden]="password.untouched || user.password" class="error">
+              Password is required
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="confirm">Confirm password</label>
+          <input type="password" class="form-control" id="confirm" [(ngModel)]="user.confirm" name="confirm" #confirm="ngModel"
+              required autocomplete="current-password">
+          <div [hidden]="confirm.untouched || user.confirm" class="error">
+              Password is required
+          </div>
+          <div [hidden]="confirm.untouched || user.confirm == user.password" class="error">
+              Must be the same as the password
+          </div>
+      </div>
+  </form>
+  </div>
+  <div class="actions">
+    <button class="sign-up-btn" (click)="signUp()" [disabled]="!signUpForm.form.valid">Sign up!</button>
+  </div>
+</div>
