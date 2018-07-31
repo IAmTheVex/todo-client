@@ -12,6 +12,8 @@ export class SignUpComponent implements OnInit {
   private user = { email: '', password: '', confirm: '' };
 
   ngOnInit() {
+    this.api.tryConnect();
+
     if(this.api.isConnected()) {
       this.router.navigate(['/to-do']);
     }

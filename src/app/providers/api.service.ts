@@ -21,6 +21,10 @@ export class ApiService {
     private client: ClientService,
     private credentialsStorage: CredentialsStorage
   ) {
+    this.tryConnect();
+  }
+
+  public tryConnect() {
     this.credentials = this.credentialsStorage.export();
     if(this.credentials != null) {
       this.client.installCredentials(this.credentials);

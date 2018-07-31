@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
   tasks: Task[] = []
 
   async ngOnInit() {
+    this.api.tryConnect();
+
     console.log("ngOnInit");
     this.today = moment().format("dddd, Do of MMMM YYYY");
     try {

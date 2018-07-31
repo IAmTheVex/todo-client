@@ -12,6 +12,8 @@ export class LogInComponent implements OnInit {
   private user = { email: '', password: '' };
 
   ngOnInit() {
+    this.api.tryConnect();
+
     if(this.api.isConnected()) {
       this.router.navigate(['/to-do']);
     }
